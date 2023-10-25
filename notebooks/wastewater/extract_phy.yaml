@@ -2,32 +2,30 @@
 # near Iona Island wastewater outfall
 
 dataset:
-  model profile: /ocean/jtao/MEOPAR/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-wastewater-salish.yaml
+  model profile: /ocean/jtao/MOAD/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-wastewater-salish.yaml
   time base: day
-  variables group: biology
+  variables group: physics tracers
 
 dask cluster: salish_cluster.yaml
 
-start date: 2018-01-01
-end date: 2018-01-02
+start date: 2018-03-01
+end date: 2018-03-31
 extract variables:
-  - ammonium
-  - nitrate
-  - diatoms
+  - outfall
 
 selection:
   depth:
     # NOTE: use depth level numbers, not depths in meters
     depth max: 25
   grid y:
-    y min: 430
-    y max: 471
+    y min: 420
+    y max: 481
   grid x:
-    x min: 280
-    x max: 321
+    x min: 270
+    x max: 331
 
 extracted dataset:
-  name: SalishSeaCast_wastewater_day_avg_biology
-  description: Day-averaged ammonium, nitrate & diatoms extracted from SalishSeaCast v202111
+  name: SalishSeaCast_wastewater_feb_day_phy
+  description: Day-averaged outfall extracted from SalishSeaCast v202111
                NEMO model with wastewater outfalls
   dest dir: /ocean/jtao/MOAD/extractions/
