@@ -4,21 +4,21 @@
 dataset:
   model profile: /ocean/jtao/MOAD/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-wastewater-salish.yaml
   time base: day
-  variables group: chemistry
+  variables group: physics tracers
 
 dask cluster: salish_cluster.yaml
 
 start date: 2018-01-01
-end date: 2018-12-31
+end date: 2019-04-30
 extract variables:
-  - CO2_flux
+  - outfall
 
 resample:
   time interval: 1M
   aggregation: mean
 
 extracted dataset:
-  name: SalishSeaCast_wastewater_month_CO2_flux
-  description: Month-averaged CO2 Flux extracted from SalishSeaCast v202111
+  name: SalishSeaCast_wastewater_month_Outfall
+  description: Month-averaged Outfall extracted from SalishSeaCast v202111
                NEMO model with wastewater outfalls
   dest dir: /ocean/jtao/MOAD/extractions/

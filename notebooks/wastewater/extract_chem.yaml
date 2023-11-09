@@ -1,0 +1,34 @@
+# Reshapr configuration to extract day-averages of interesting biology variables
+# near Iona Island wastewater outfall
+
+dataset:
+  model profile: /ocean/jtao/MOAD/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-salish.yaml
+  time base: hour
+  variables group: chemistry
+
+dask cluster: salish_cluster.yaml
+
+start date: 2018-01-01
+end date: 2018-12-31
+extract variables:
+  - dissolved_inorganic_carbon
+  - total_alkalinity
+
+selection:
+  depth:
+    # NOTE: use depth level numbers, not depths in meters
+    depth min: 26
+    depth max: 27
+  grid y:
+    y min: 447
+    y max: 448
+  grid x:
+    x min: 305
+    x max: 306
+
+
+extracted dataset:
+  name: SalishSeaCast_wastewater_month_TA_and_DIC_x305_y447
+  description: Month-averaged TA DIC extracted from SalishSeaCast v202111
+               NEMO model with wastewater outfalls
+  dest dir: /ocean/jtao/MOAD/extractions/
