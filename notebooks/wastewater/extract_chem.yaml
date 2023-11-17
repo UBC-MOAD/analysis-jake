@@ -4,15 +4,15 @@
 dataset:
   model profile: /ocean/jtao/MOAD/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-salish.yaml
   time base: hour
-  variables group: chemistry
+  variables group: physics tracers
 
 dask cluster: salish_cluster.yaml
 
 start date: 2018-01-01
 end date: 2018-12-31
 extract variables:
-  - dissolved_inorganic_carbon
-  - total_alkalinity
+  - votemper
+  - vosaline
 
 selection:
   depth:
@@ -28,7 +28,7 @@ selection:
 
 
 extracted dataset:
-  name: SalishSeaCast_wastewater_month_TA_and_DIC_x305_y447
-  description: Month-averaged TA DIC extracted from SalishSeaCast v202111
+  name: SalishSeaCast_wastewater_month_temp_and_salinity_x305_y447
+  description: Month-averaged temp salinity extracted from SalishSeaCast v202111
                NEMO model with wastewater outfalls
   dest dir: /ocean/jtao/MOAD/extractions/
