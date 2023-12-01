@@ -4,21 +4,23 @@
 dataset:
   model profile: /ocean/jtao/MOAD/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-wastewater-salish.yaml
   time base: day
-  variables group: physics tracers
+  variables group: biology
 
 dask cluster: salish_cluster.yaml
 
 start date: 2018-01-01
-end date: 2019-12-31
+end date: 2020-12-31
 extract variables:
-  - outfall
+  - nitrate
+  - diatoms
+  - flagellates
 
 resample:
   time interval: 1M
   aggregation: mean
 
 extracted dataset:
-  name: SalishSeaCast_wastewater_month_outfall
-  description: Month-averaged Outfall extracted from SalishSeaCast v202111
+  name: SalishSeaCast_wastewater_month_nitrate_diatoms_flagellates
+  description: Month-averaged Nitrate Diatoms Flagellates extracted from SalishSeaCast v202111
                NEMO model with wastewater outfalls
   dest dir: /ocean/jtao/MOAD/extractions/
