@@ -9,16 +9,16 @@ dataset:
 dask cluster: salish_cluster.yaml
 
 start date: 2018-01-01
-end date: 2020-12-31
+end date: 2021-09-30
 extract variables:
-  - dissolved_oxygen
+  - CO2_flux
 
 resample:
   time interval: 1M
   aggregation: mean
 
 extracted dataset:
-  name: SalishSeaCast_wastewater_month_oxygen
-  description: Month-averaged Oxygen extracted from SalishSeaCast v202111
+  name: SalishSeaCast_wastewater_month_CO2Flux
+  description: Month-averaged CO2 Flux extracted from SalishSeaCast v202111
                NEMO model with wastewater outfalls
   dest dir: /ocean/jtao/MOAD/extractions/
