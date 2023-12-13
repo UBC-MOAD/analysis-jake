@@ -9,7 +9,7 @@ dataset:
 dask cluster: salish_cluster.yaml
 
 start date: 2018-01-01
-end date: 2021-09-30
+end date: 2021-12-31
 extract variables:
   - CO2_flux
 
@@ -18,7 +18,7 @@ resample:
   aggregation: mean
 
 extracted dataset:
-  name: SalishSeaCast_wastewater_month_CO2Flux
+  name: SalishSeaCast_wastewater_month_CO2_flux
   description: Month-averaged CO2 Flux extracted from SalishSeaCast v202111
                NEMO model with wastewater outfalls
   dest dir: /ocean/jtao/MOAD/extractions/
