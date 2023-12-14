@@ -1,0 +1,24 @@
+# Reshapr configuration to extract day-averages of interesting biology variables
+# near Iona Island wastewater outfall
+
+dataset:
+  model profile: /ocean/jtao/MOAD/analysis-jake/notebooks/wastewater/model_profiles/SalishSeaCast-202111-wastewater-salish-alkalinity.yaml
+  time base: day
+  variables group: physics tracers
+
+dask cluster: salish_cluster.yaml
+
+start date: 2021-11-01
+end date: 2021-11-30
+extract variables:
+  - outfall
+
+resample:
+  time interval: 1M
+  aggregation: mean
+
+extracted dataset:
+  name: SalishSeaCast_wastewater_month_alkalinity_outfall
+  description: Month-averaged Outfall extracted from SalishSeaCast v202111
+               NEMO model with wastewater outfalls
+  dest dir: /ocean/jtao/MOAD/extractions/
